@@ -26,15 +26,15 @@
 (defn $app []
   [:div
     [code-eval
-     "(+ 1 1)"]
-    [code-eval
      "(ratom {:count 0})"]
     [code-eval
-     "(with-let [] [:div \"Hi there\"])"]
+     "(with-let1 [t 10] [:div t])"]
     [code-eval
-     "(reagent.core/with-let [] [:div \"Hi there\"])"]
+     "(reagent.core/with-let2 [t 10] [:div t])"]
     [code-eval
-     "(with-let [t 10] [:div t])"]])
+     "(with-let3 [t 10] [:div t])"]
+    [code-eval
+     "(with-let4 [t 10] [:div t])"]])
 
 (defn ^:dev/after-load start []
   (js/console.log (str "Starting " (js/Date.)))
